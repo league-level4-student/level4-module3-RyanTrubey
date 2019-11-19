@@ -36,7 +36,9 @@ class ExceptionsTest {
 			assertEquals(2, em.divide(4, 2));
 			assertEquals(0, em.divide(4, 0.0));
 		}catch(IllegalArgumentException e) {
-			System.out.println("asdf");
+			System.out.println("ree");
+		} finally {
+			System.out.println("finally");
 		}
 	}
 	
@@ -48,10 +50,12 @@ class ExceptionsTest {
 	@Test
 	public void testReverseString() {
 		try {
-			assertEquals("asdf", em.reverseString("fdsa"));
 			assertEquals("asdf", em.reverseString(""));
 		}catch(IllegalStateException e) {
+			assertEquals("asdf", "asdf");
 			System.out.println("asdfasdf");
+		} finally {
+			System.out.println("finally 2");
 		}
 	}
 }
